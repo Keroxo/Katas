@@ -137,4 +137,178 @@ class FromRomanNumeralsTest {
         int actual = fromRomanNumerals.translate("XVIII");
         Assertions.assertEquals(18, actual);
     }
+
+    @Test
+    void testNumeral19() {
+        int actual = fromRomanNumerals.translate("XIX");
+        Assertions.assertEquals(19, actual);
+    }
+
+    @Test
+    void testNumeral20() {
+        int actual = fromRomanNumerals.translate("XX");
+        Assertions.assertEquals(20, actual);
+    }
+
+    @Test
+    void testNumeral22() {
+        int actual = fromRomanNumerals.translate("XXII");
+        Assertions.assertEquals(22, actual);
+    }
+
+    @Test
+    void testNumeral30() {
+        int actual = fromRomanNumerals.translate("XXX");
+        Assertions.assertEquals(30, actual);
+    }
+
+    @Test
+    void testNumeral33() {
+        int actual = fromRomanNumerals.translate("XXXIII");
+        Assertions.assertEquals(33, actual);
+    }
+
+    @Test
+    void testNumeral40() {
+        int actual = fromRomanNumerals.translate("XL");
+        Assertions.assertEquals(40, actual);
+    }
+
+    @Test
+    void testNumeral44() {
+        int actual = fromRomanNumerals.translate("XLIV");
+        Assertions.assertEquals(44, actual);
+    }
+
+    @Test
+    void testNumeral50() {
+        int actual = fromRomanNumerals.translate("L");
+        Assertions.assertEquals(50, actual);
+    }
+
+    @Test
+    void testNumeral55() {
+        int actual = fromRomanNumerals.translate("LV");
+        Assertions.assertEquals(55, actual);
+    }
+
+    @Test
+    void testNumeral60() {
+        int actual = fromRomanNumerals.translate("LX");
+        Assertions.assertEquals(60, actual);
+    }
+
+    @Test
+    void testNumeral66() {
+        int actual = fromRomanNumerals.translate("LXVI");
+        Assertions.assertEquals(66, actual);
+    }
+
+    @Test
+    void testNumeral70() {
+        int actual = fromRomanNumerals.translate("LXX");
+        Assertions.assertEquals(70, actual);
+    }
+
+    @Test
+    void testNumeral77() {
+        int actual = fromRomanNumerals.translate("LXXVII");
+        Assertions.assertEquals(77, actual);
+    }
+
+    @Test
+    void testNumeral80() {
+        int actual = fromRomanNumerals.translate("LXXX");
+        Assertions.assertEquals(80, actual);
+    }
+
+    @Test
+    void testNumeral88() {
+        int actual = fromRomanNumerals.translate("LXXXVIII");
+        Assertions.assertEquals(88, actual);
+    }
+
+    @Test
+    void testNumeral90() {
+        int actual = fromRomanNumerals.translate("XC");
+        Assertions.assertEquals(90, actual);
+    }
+
+    @Test
+    void testNumeral99() {
+        int actual = fromRomanNumerals.translate("XCIX");
+        Assertions.assertEquals(99, actual);
+    }
+
+    @Test
+    void testNumeral100() {
+        int actual = fromRomanNumerals.translate("C");
+        Assertions.assertEquals(100, actual);
+    }
+
+    @Test
+    void testNumeral119() {
+        int actual = fromRomanNumerals.translate("CXIX");
+        Assertions.assertEquals(119, actual);
+    }
+
+    @Test
+    void testNumeral200() {
+        int actual = fromRomanNumerals.translate("CC");
+        Assertions.assertEquals(200, actual);
+    }
+
+    @Test
+    void testNumeral214() {
+        int actual = fromRomanNumerals.translate("CCXIV");
+        Assertions.assertEquals(214, actual);
+    }
+
+    @Test
+    void testNumeral304() {
+        int actual = fromRomanNumerals.translate("CCCIV");
+        Assertions.assertEquals(304, actual);
+    }
+
+    @Test
+    void testNumeral468() {
+        int actual = fromRomanNumerals.translate("CDLXVIII");
+        Assertions.assertEquals(468, actual);
+    }
+
+    @Test
+    void testNumeral545() {
+        int actual = fromRomanNumerals.translate("DXLV");
+        Assertions.assertEquals(545, actual);
+    }
+
+    @Test
+    void testNumeral633() {
+        int actual = fromRomanNumerals.translate("DCXXXIII");
+        Assertions.assertEquals(633, actual);
+    }
+
+    @Test
+    void testNumeral774() {
+        int actual = fromRomanNumerals.translate("DCCLXXIV");
+        Assertions.assertEquals(774, actual);
+    }
+
+    @Test
+    void testNumeral895() {
+        int actual = fromRomanNumerals.translate("DCCCXCV");
+        Assertions.assertEquals(895, actual);
+    }
+
+    @Test
+    void testNumeral921() {
+        int actual = fromRomanNumerals.translate("CMXXI");
+        Assertions.assertEquals(921, actual);
+    }
+
+    @Test
+    void testNumeral1000() {
+        int actual = fromRomanNumerals.translate("M");
+        Assertions.assertEquals(1000, actual);
+    }
 }

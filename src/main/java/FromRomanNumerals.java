@@ -1,20 +1,25 @@
-import javafx.util.Pair;
+import java.util.Map;
+import java.util.stream.IntStream;
+
+import static java.util.Map.entry;
 
 class FromRomanNumerals {
 
+    private static final Map<Character, Integer> ROMAN_NUMERALS = Map.ofEntries(
+            entry('I', 1),
+            entry('V', 5),
+            entry('X', 10),
+            entry('L', 50),
+            entry('C', 100),
+            entry('D', 500),
+            entry('M', 1000)
+    );
+
     int translate(String romanNumeral) {
         validateInput(romanNumeral);
-
-        if (romanNumeral.contains("X") && romanNumeral.contains("V")) {
-            return translateFourteenToEighteen(romanNumeral);
-        }
-        if (romanNumeral.contains("X")) {
-            return translateNineToThirteen(romanNumeral);
-        }
-        if (romanNumeral.contains("V")) {
-            return translateFourToEight(romanNumeral);
-        }
-        return translateOneToThree(romanNumeral);
+        int[] valuesForChars = translateCharsInValues(romanNumeral);
+        valuesForChars = calculateNegativeValues(valuesForChars);
+        return IntStream.of(valuesForChars).sum();
     }
 
     private void validateInput(String input) {
@@ -26,46 +31,32 @@ class FromRomanNumerals {
         }
     }
 
-    private int translateOneToThree(String numeral) {
-        if (numeral.equals("I")) {
-            return 1;
-        }
-        if (numeral.equals("II")) {
-            return 2;
-        }
-        if (numeral.equals("III")) {
-            return 3;
-        }
-        return 0;
+    private int[] translateCharsInValues(String numeral) {
+        return numeral.codePoints()
+                .map(i -> ROMAN_NUMERALS.get((char)i))
+                .toArray();
     }
 
-    private int translateFourToEight(String numeral) {
-        return translateTwo(numeral, new Pair<>("V", 5));
-    }
+    private int[] calculateNegativeValues(int[] values) {
 
-    private int translateNineToThirteen(String numeral) {
-        return translateTwo(numeral, new Pair<>("X", 10));
-    }
-
-    private int translateTwo(String numeral, Pair<String, Integer> a) {
-        if (numeral.equals(a.getKey())) {
-            return a.getValue();
+        int equalsStreak = 0;
+        for (int i = 0; i < values.length - 1; i++) {
+            if (values[i] < values[i+1]) {
+               values = setNegative(values, i-equalsStreak, i);
+            }
+            if (values[i] == values[i+1]) {
+                equalsStreak++;
+            } else {
+                equalsStreak = 0;
+            }
         }
-
-        int indexI = numeral.indexOf("I");
-        int indexX = numeral.indexOf(a.getKey());
-
-        if (indexI < indexX) {
-            int valueI = translateOneToThree(numeral.substring(indexI, indexX));
-            return a.getValue() - valueI;
-        } else {
-            int valueI = translateOneToThree(numeral.substring(indexI, numeral.length()));
-            return a.getValue() + valueI;
-        }
+        return values;
     }
 
-    private int translateFourteenToEighteen(String numeral) {
-        int value = translateFourToEight(numeral.substring(1, numeral.length()));
-        return value + 10;
+    private int[] setNegative(int[] values, int start, int end) {
+        for(int i = start; i <= end; i++) {
+            values[i] *= -1;
+        }
+        return values;
     }
 }
