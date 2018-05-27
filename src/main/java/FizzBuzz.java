@@ -3,6 +3,7 @@ import java.util.stream.IntStream;
 
 public class FizzBuzz {
 
+    private static final int MIN_VALUE = 1;
     private static final int MAX_VALUE = 100;
 
     public static void main(String[] args) {
@@ -10,9 +11,9 @@ public class FizzBuzz {
     }
 
     String[] generate() {
-        return IntStream.rangeClosed(1, MAX_VALUE)
-        .mapToObj(this::replaceNumberWithFizzAndBuzz)
-        .toArray(String[]::new);
+        return IntStream.rangeClosed(MIN_VALUE, MAX_VALUE)
+                .mapToObj(this::replaceNumberWithFizzAndBuzz)
+                .toArray(String[]::new);
     }
 
     private String replaceNumberWithFizzAndBuzz(int value) {
