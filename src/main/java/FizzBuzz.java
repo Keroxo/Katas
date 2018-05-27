@@ -17,18 +17,17 @@ public class FizzBuzz {
     }
 
     private String replaceNumberWithFizzAndBuzz(int value) {
-        String result = "";
 
+        if (isMultipleOfThree(value) && isMultipleOfFive(value)) {
+            return "FizzBuzz";
+        }
         if (isMultipleOfThree(value)) {
-            result += "Fizz";
+            return "Fizz";
         }
         if (isMultipleOfFive(value)) {
-            result += "Buzz";
+            return "Buzz";
         }
-        if (result.isEmpty()) {
-            result += String.valueOf(value);
-        }
-        return result;
+        return String.valueOf(value);
     }
 
     private boolean isMultipleOfThree(int value) {
