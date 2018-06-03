@@ -1,4 +1,4 @@
-import java.util.Map;
+import java.util.*;
 import java.util.stream.IntStream;
 
 import static java.util.Map.entry;
@@ -18,7 +18,7 @@ class FromRomanNumerals {
     int translate(String romanNumeral) {
         validateInput(romanNumeral);
         int[] valuesForChars = translateCharsInValues(romanNumeral);
-        valuesForChars = calculateNegativeValues(valuesForChars);
+        calculateNegativeValues(valuesForChars);
         return IntStream.of(valuesForChars).sum();
     }
 
@@ -37,26 +37,11 @@ class FromRomanNumerals {
                 .toArray();
     }
 
-    private int[] calculateNegativeValues(int[] values) {
-
-        int equalsStreak = 0;
-        for (int i = 0; i < values.length - 1; i++) {
-            if (values[i] < values[i+1]) {
-               values = setNegative(values, i-equalsStreak, i);
-            }
-            if (values[i] == values[i+1]) {
-                equalsStreak++;
-            } else {
-                equalsStreak = 0;
-            }
-        }
-        return values;
-    }
-
-    private int[] setNegative(int[] values, int start, int end) {
-        for(int i = start; i <= end; i++) {
-            values[i] *= -1;
-        }
-        return values;
+    private void calculateNegativeValues(int[] values) {
+        IntStream.rangeClosed(0, values.length-2)
+        .forEach(i -> {
+            if (values[i] < values[i+1])
+                values[i] *= -1;
+        });
     }
 }
