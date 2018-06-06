@@ -5,6 +5,7 @@ The Katas are from http://ccd-school.de/
 ## Übungen
  * [FizzBuzz](http://ccd-school.de/coding-dojo/function-katas/fizzbuzz/)
  * [From Roman Numerals](http://ccd-school.de/coding-dojo/function-katas/from-roman-numerals/)
+ * [Fröhliche Zahlen](http://ccd-school.de/coding-dojo/function-katas/froehliche-zahlen/)
  
 ### FizzBuzz
 
@@ -79,3 +80,14 @@ Nimm an, dass die Römischen Zahlen korrekt sind.
 
 Variation
 Erkenne syntaktische (z.B. „I X“) und semantische (z.B. „IC“) Fehler in Römischen Zahlen.
+
+#Fröhliche Zahlen (Happy Numbers)
+Entwickle eine Funktion, die erkennt, ob eine Zahl „fröhlich“ ist oder nicht.
+
+Eine Fröhliche Zahl ist eine Zahl, bei der die Summe der Quadrate ihrer Ziffern „auf die Dauer“ 1 ergibt. Beispiel:
+
+```
+19 -> 1^2 + 9^2 = 82 -> 8^2 + 2^2 = 68 -> 6^2 + 8^2 = 100 -> 1^2 + 0^2 + 0^2 = 1
+```
+Variation #1
+Ermittle alle Fröhlichen Zahlen in einem Zahlenbereich, z.B. von 10 bis 20.
