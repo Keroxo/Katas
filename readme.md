@@ -1,11 +1,15 @@
 # Katas
 
-The Katas are from http://ccd-school.de/
+The Katas are from: http://ccd-school.de/
 
 ## Übungen
+### Function Katas
  * [FizzBuzz](http://ccd-school.de/coding-dojo/function-katas/fizzbuzz/)
  * [From Roman Numerals](http://ccd-school.de/coding-dojo/function-katas/from-roman-numerals/)
  * [Fröhliche Zahlen](http://ccd-school.de/coding-dojo/function-katas/froehliche-zahlen/)
+ 
+### Class Katas
+ * [Hangman](http://ccd-school.de/coding-dojo/class-katas/galgenmaennchen/) 
  
 ### FizzBuzz
 

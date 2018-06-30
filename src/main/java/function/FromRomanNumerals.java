@@ -1,3 +1,5 @@
+package function;
+
 import java.util.*;
 import java.util.stream.IntStream;
 

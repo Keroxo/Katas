@@ -1,3 +1,5 @@
+package function;
+
 import java.util.Arrays;
 import java.util.stream.IntStream;
 
@@ -19,7 +21,7 @@ public class FizzBuzz {
     private String replaceNumberWithFizzAndBuzz(int value) {
 
         if (isMultipleOfThree(value) && isMultipleOfFive(value)) {
-            return "FizzBuzz";
+            return "function.FizzBuzz";
         }
         if (isMultipleOfThree(value)) {
             return "Fizz";

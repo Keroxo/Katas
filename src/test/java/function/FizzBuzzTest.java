@@ -1,3 +1,6 @@
+package function;
+
+import function.FizzBuzz;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.Assertions;
@@ -38,6 +41,6 @@ class FizzBuzzTest {
     @Test
     void testFirstFizzBuzz() {
         String[] actual = fizzBuzz.generate();
-        Assertions.assertEquals("FizzBuzz", actual[14]);
+        Assertions.assertEquals("function.FizzBuzz", actual[14]);
     }
 }
